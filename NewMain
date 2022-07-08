@@ -3285,7 +3285,7 @@ Speed:NewToggle("CFrame", "", function(state)
 	end
 end)
 
-Speed:NewSlider("Speed 1-42", "Adjust CFrame speed", 42, 1, function(s)
+Speed:NewSlider("Speed 1-28", "Adjust CFrame speed", 28, 1, function(s)
 	speedval["Value"] = s
 end)
 
