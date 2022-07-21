@@ -2865,7 +2865,7 @@ local colors = {
 }
 local kavoUi = loadstring(game:HttpGet('https://raw.githubusercontent.com/romoneand/kavoui/main/NewMain'))() 
 
-local window = kavoUi.CreateLib("SytroNight Fixed", "DarkTheme")
+local window = kavoUi.CreateLib("SytroNight v1.2", "DarkTheme")
 local entity = loadstring(game:HttpGet('https://raw.githubusercontent.com/romoneand/vape-entity/main/NewMain'))() 
 
 do
@@ -3399,6 +3399,67 @@ Infjump:NewToggle("Infjump", "Allows you to hold space to fly up", function(stat
 		connectioninfjump:Disconnect()
 	end
 end)
+
+local Autobuy = Blatant:NewSection("Auto buy")
+Autobuy:NewToggle("Auto buy"  , "", function(state)
+                                            if state then
+                                                _G.on = true
+                                                
+                                                while _G.on == true do
+                                                    wait()
+                                                
+                                                wait(0.2)
+                                                                                              
+           local args = {
+    [1] = {
+        ["shopItem"] = {
+            ["currency"] = "iron",
+            ["itemType"] = "wool_white",
+            ["amount"] = 16,
+            ["price"] = 8,
+            ["category"] = "Blocks"
+        }
+    }
+}
+
+game:GetService("ReplicatedStorage").rbxts_include.node_modules.net.out._NetManaged.BedwarsPurchaseItem:InvokeServer(unpack(args))
+                                    
+          wait(0.1)      
+
+                  local args = {
+    [1] = {
+        ["shopItem"] = {
+            ["lockAfterPurchase"] = true,
+            ["itemType"] = "leather_chestplate",
+            ["price"] = 50,
+            ["customDisplayName"] = "Leather Armor",
+            ["currency"] = "iron",
+            ["amount"] = 1,
+            ["category"] = "Combat",
+            ["ignoredByKit"] = {
+                [1] = "bigman"
+            },
+            ["spawnWithItems"] = {
+                [1] = "leather_helmet",
+                [2] = "leather_chestplate",
+                [3] = "leather_boots"
+            },
+            ["nextTier"] = "iron_chestplate"
+        }
+    }
+}
+
+game:GetService("ReplicatedStorage").rbxts_include.node_modules.net.out._NetManaged.BedwarsPurchaseItem:InvokeServer(unpack(args))
+             
+                                                    end
+                                                    else
+                                                _G.on = false
+                                                        
+                                                    end
+                                                end)
+                
+
+
 
 runcode(function()
 	local wall = nil
