@@ -3497,12 +3497,11 @@ FixCam:NewButton("FixCam", "fix camera bug on mobile", function()
 end)
 
 local ESP = Render:NewSection("ESP")
-ESP:NewToggle("coming next update", "coming next update", function(state)
-	if state then
-		print("...")
-	else
-		print("...")
-	end
+ESP:NewButton("Esp", "Esp", function()
+	 
+loadstring(game:HttpGet"https://pastebin.com/raw/MbQqeRy9")()
+
+
 end)
 
 --[[ dont work
