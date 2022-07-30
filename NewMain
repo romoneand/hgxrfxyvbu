@@ -3497,12 +3497,9 @@ FixCam:NewButton("FixCam", "fix camera bug on mobile", function()
 end)
 
 local ESP = Render:NewSection("ESP")
-ESP:NewButton("Esp", "Esp", function()
+ESP:NewButton("coming soon", "coming soon", function()
 	 
-loadstring(game:HttpGet"https://pastebin.com/raw/MbQqeRy9")()
-
-
-end)
+ end)
 
 --[[ dont work
 runcode(function()
